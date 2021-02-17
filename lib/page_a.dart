@@ -80,6 +80,7 @@ class _PageaState extends State<Pagea> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink[50],
 
            appBar: AppBar(
         title: Text('Daily Tasks'),
