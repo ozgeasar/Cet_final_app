@@ -123,14 +123,15 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           CircleAvatar(
                             radius: 32,
+                            child: Image.asset('assets/flww.png'),
                           ),
                           SizedBox(width: 16,),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Ferrany Lushn', style: TextStyle(color: Colors.black, fontSize: 20.0),),
-                              Text('76396373849', style: TextStyle(fontSize: 14, color: Colors.black),),
+                              Text('Lucy Xxxx', style: TextStyle(color: Colors.black, fontSize: 20.0),),
+                              Text('ID 76396373849', style: TextStyle(fontSize: 14, color: Colors.black),),
                             ],
                           )
                         ],
@@ -146,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           RaisedButton(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)
+                              borderRadius: BorderRadius.circular(20)
                             ),
                             onPressed: () {
                               //Navigator.of(context).pushNamed(Pagea.tag);
@@ -159,15 +160,19 @@ class _HomePageState extends State<HomePage> {
                              children: [
                                 Icon(
                                  Icons.ballot_outlined,
+                                  size: 60.0,
+                                  color: Colors.blueGrey,
                                ),
-                               Text('Daily Tasks')
+                               Text('Daily Tasks',
+                               style: TextStyle(fontSize: 20),
+                               ),
                              ],
                            ),
                           ),
 
                           RaisedButton(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)
+                                borderRadius: BorderRadius.circular(20)
                             ),
                             onPressed: () {
 
@@ -178,16 +183,20 @@ class _HomePageState extends State<HomePage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.ballot_outlined,
+                                  Icons.auto_awesome,
+                                  size: 60.0,
+                                  color: Colors.blueGrey,
                                 ),
-                                Text('Daily Tasks')
+                                Text('Lotus Carers',
+                                  style: TextStyle(fontSize: 20),
+                                ),
                               ],
                             ),
                           ),
 
                           RaisedButton(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)
+                                borderRadius: BorderRadius.circular(20)
                             ),
                             onPressed: () {
 
@@ -198,15 +207,19 @@ class _HomePageState extends State<HomePage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.ballot_outlined,
+                                  Icons.question_answer,
+                                  size: 60.0,
+                                  color: Colors.blueGrey,
                                 ),
-                                Text('Daily Tasks')
+                                Text('Chat',
+                                  style: TextStyle(fontSize: 20),
+                                ),
                               ],
                             ),
                           ),
                           RaisedButton(
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)
+                                borderRadius: BorderRadius.circular(20)
                             ),
                             onPressed: () {
 
@@ -217,12 +230,113 @@ class _HomePageState extends State<HomePage> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Icon(
-                                  Icons.ballot_outlined,
+                                  Icons.article_outlined,
+                                  size: 60.0,
+                                  color: Colors.blueGrey,
                                 ),
-                                Text('Daily Tasks')
+                                Text('Medicine Infos',
+                                  style: TextStyle(fontSize: 20),
+                                ),
                               ],
                             ),
                           ),
+
+                          RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            onPressed: () {
+
+                            },
+                            color: Colors.white,
+                            elevation: 9,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.add_box_outlined,
+                                  size: 60.0,
+                                  color: Colors.blueGrey,
+                                ),
+                                Text('Add new carers',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            onPressed: () {
+
+                            },
+                            color: Colors.white,
+                            elevation: 9,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.add_location_alt_outlined,
+                                  size: 60.0,
+                                  color: Colors.blueGrey,
+                                ),
+                                Text('Tracking',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            onPressed: () {
+
+                            },
+                            color: Colors.white,
+                            elevation: 9,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.accessibility_new_rounded,
+                                  size: 60.0,
+                                  color: Colors.blueGrey,
+                                ),
+                                Text('Mood your loved',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          RaisedButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20)
+                            ),
+                            onPressed: () {
+
+                            },
+                            color: Colors.white,
+                            elevation: 9,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.warning_amber_rounded,
+                                  size: 60.0,
+                                  color: Colors.blueGrey,
+                                ),
+                                Text('Emergency',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                              ],
+                            ),
+                          ),
+
 
 
                         ],
@@ -242,7 +356,12 @@ class _HomePageState extends State<HomePage> {
 
       ),
 
+      //decoration: BoxDecoration(
+        //gradient:
+        //LinearGradient(colors: [Colors.blue, Colors.lightBlueAccent] ),
+      //),
 
+     // backgroundColor: Colors.red[100],
     );
   }
 }

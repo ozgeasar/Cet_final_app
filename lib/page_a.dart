@@ -31,6 +31,8 @@ class _PageaState extends State<Pagea> {
     prefs.setString('task', json.encode(list));
     _taskController.text = '';
     Navigator.of(context).pop();
+
+    _getTasks();
   }
 
   void _getTasks() async{
@@ -78,13 +80,19 @@ class _PageaState extends State<Pagea> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+
+           appBar: AppBar(
         title: Text('Daily Tasks'),
         actions: [
           IconButton(
-              icon: Icon(Icons.delete_outline),
+              icon: Icon(Icons.save),
               onPressed: () => updatePendingTasksList(),
           ),
+          IconButton(
+            icon: Icon(Icons.delete_outline),
+            onPressed: () => updatePendingTasksList(),
+          ),
+
         ],
 
         flexibleSpace: Container(
@@ -113,6 +121,7 @@ class _PageaState extends State<Pagea> {
               left: 10.0,
             ),
           alignment: Alignment.centerLeft,
+
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(5.0),
             border: Border.all(
@@ -139,18 +148,26 @@ class _PageaState extends State<Pagea> {
         ))
         .toList(),
       ),
+
       floatingActionButton: FloatingActionButton(
         child: Icon(
           Icons.add,
           color: Colors.white,
         ),
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.blue,
+        elevation: 10,
+
+
         onPressed: () => showModalBottomSheet(
           context: context,
           builder: (BuildContext context) => Container(
             padding: const EdgeInsets.all(10.0),
-            height: 250,
-            color: Colors.lightBlueAccent[200],
+            height: 350,
+            decoration: BoxDecoration(
+              gradient:
+              LinearGradient(colors: [Colors.blue, Colors.lightBlueAccent] ),
+            ),
+            //color: Colors.lightBlueAccent[200],
             child: Column(
 
               children:[
@@ -189,27 +206,36 @@ class _PageaState extends State<Pagea> {
 
                   child: Row(
                     children: [
-                      Container(
-                        width: (MediaQuery.of(context).size.width/2) - 20,
-                        child: RaisedButton(
-                          color: Colors.white,
-                          child: Text(
-                            'RESET',
-                          ),
-                          onPressed: () => _taskController = '',
-                        ),
-                      ),
+
+
 
                       Container(
-                        width: (MediaQuery.of(context).size.width/2) - 20,
+                        width: (MediaQuery.of(context).size.width/2) - 25,
                         child: RaisedButton(
-                          color: Colors.blue,
+                          color: Colors.white,
                           child: Text(
                             'ADD',
                           ),
                           onPressed: () => saveData(),
                         ),
                       ),
+
+                      SizedBox(
+                        width:10.0,
+                      ),
+
+                      Container(
+                        width: (MediaQuery.of(context).size.width/2) - 25,
+                        child: RaisedButton(
+                          color: Colors.white,
+                          child: Text(
+                            'RESET',
+                          ),
+                          onPressed: () => _taskController.text = '',
+                        ),
+                      ),
+
+
 
                     ],
                   ),

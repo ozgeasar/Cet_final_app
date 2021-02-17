@@ -14,10 +14,22 @@ class _LoginPageState extends State<LoginPage> {
       tag: 'hero',
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
-        radius: 48.0,
+        radius: 60.0,
         child: Image.asset('assets/lotus.png'),
       ),
     );
+
+    final appname = FlatButton(
+      child: Text(
+        'LOTUS CARE APP',
+        style: TextStyle(color: Colors.black54,
+        fontStyle: FontStyle.italic,
+          fontSize: 20.0,
+        ),
+      ),
+      onPressed: () {},
+    );
+
 
     final email = TextFormField(
       keyboardType: TextInputType.emailAddress,
@@ -55,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).pushNamed(HomePage.tag);
         },
         padding: EdgeInsets.all(12),
-        color: Colors.lightBlueAccent,
+        color: Colors.pinkAccent[100],
         child: Text('Log In', style: TextStyle(color: Colors.white)),
       ),
     );
@@ -76,7 +88,9 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.only(left: 24.0, right: 24.0),
           children: [
             logo,
-            SizedBox(height: 48.0),
+            SizedBox(height: 10.0),
+            appname,
+            SizedBox(height: 10.0),
             email,
             SizedBox(height: 8.0),
             password,
