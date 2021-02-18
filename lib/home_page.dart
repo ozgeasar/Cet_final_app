@@ -1,7 +1,9 @@
 import 'package:final_app_cet/login_page.dart';
+import 'package:final_app_cet/med_info.dart';
 import 'package:flutter/material.dart';
 import 'package:final_app_cet/page_a.dart';
 import 'package:final_app_cet/people.dart';
+import 'package:final_app_cet/med_info.dart' show MedInfo;
 
 void gotoPagea(BuildContext context) {
   Navigator.of(context).push(
@@ -18,6 +20,12 @@ void gotoLoginPage(BuildContext context) {
 void gotoPeople(BuildContext context) {
   Navigator.of(context).push(
     MaterialPageRoute(builder: (context) => People()),
+  );
+}
+
+void gotoMedInfo(BuildContext context) {
+  Navigator.of(context).push(
+    MaterialPageRoute(builder: (context) => MedInfo()),
   );
 }
 
@@ -228,6 +236,7 @@ class _HomePageState extends State<HomePage> {
                                 borderRadius: BorderRadius.circular(20)
                             ),
                             onPressed: () {
+                              gotoMedInfo(context);
 
                             },
                             color: Colors.white,
