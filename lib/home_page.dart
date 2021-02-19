@@ -105,14 +105,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Stack(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  alignment: Alignment.topCenter,
-                  image: AssetImage('assets/flww.png'),
-                ),
-              ),
-            ),
+
             Container(
               width: MediaQuery.of(context).size.width,
               padding: EdgeInsets.all(28.0),
@@ -137,6 +130,7 @@ class _HomePageState extends State<HomePage> {
                         children: [
                           CircleAvatar(
                             radius: 32,
+                            backgroundColor: Colors.transparent,
                             child: Image.asset('assets/flww.png'),
                           ),
                           SizedBox(width: 16,),

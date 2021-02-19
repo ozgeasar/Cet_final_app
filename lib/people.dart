@@ -78,7 +78,7 @@ class _PeopleState extends State<People> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(100),),
                     image: DecorationImage(
-                      image: ExactAssetImage("assets/flww.png"),
+                      image: AssetImage("assets/flww.png"),
                     ),
 
                   ),
