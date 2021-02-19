@@ -150,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                       child: GridView.count(
                         mainAxisSpacing:100,
                         crossAxisSpacing:100,
-                        primary:false,
+                        //primary:false,
                         crossAxisCount: 2,
                         children: [
                           RaisedButton(
