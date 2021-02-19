@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MedInfo extends StatefulWidget {
   @override
@@ -7,8 +8,23 @@ class MedInfo extends StatefulWidget {
 }
 
 class _MedInfoState extends State<MedInfo> {
-  @override
 
+
+  String _launchUrl= 'https://www.nhs.uk/live-well/healthy-body/which-painkiller-to-use/';
+
+
+
+  Future<void> _launchInApp(String url) async{
+    if(await canLaunch(url)) {
+      await launch(url, forceSafariVC: true, forceWebView: false,
+        headers: <String, String>{'header_key': 'header_value'},
+      );
+    }else{ throw 'Could not launch $url';
+    }
+  }
+
+
+  @override
   Widget build(BuildContext context) {
     final screenHeight =MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
@@ -82,7 +98,9 @@ class _MedInfoState extends State<MedInfo> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        _buildMedCard('Pain KillerX', '15 gram', 'assets/flww.png'),
+                        _buildMedCard('Pain Killer X', '500 mg', 'assets/flww.png'),
+                        //_buildMedCard('Pill Y', '200 mg', 'assets/flww.png'),
+                       // _buildMedCard('Blood Pressure Prob', '600 mg', 'assets/flww.png'),
 
 
 
@@ -107,11 +125,7 @@ class _MedInfoState extends State<MedInfo> {
 
   Widget _buildMedCard(String title, String calCount, String imgPath) {
     return InkWell(
-      onTap: () {
-
-
-
-      },
+      onTap: () {},
       child: Padding(
         padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0),
         child: Stack(
@@ -129,11 +143,13 @@ class _MedInfoState extends State<MedInfo> {
                   borderRadius: BorderRadius.circular(20.0),
                   color: Colors.pink[300],
                 ),
+
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(padding: const EdgeInsets.only(left: 15.0),
+
                     child: Text(
                       title,
                       style: TextStyle(
@@ -143,9 +159,18 @@ class _MedInfoState extends State<MedInfo> {
                     ),
                     ),
                     SizedBox(height: 7.0),
+
+                    RaisedButton(
+                      child: const Text('click for info'),
+                      onPressed: () {
+                        _launchInApp(_launchUrl);
+                      },
+                      color: Colors.white,
+                    ),
+
                     Padding(padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
-                      'for back pain',
+                      'for your health',
                       style: TextStyle(
                         fontSize: 12.0,
                         color: Colors.white,
